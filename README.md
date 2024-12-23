@@ -40,7 +40,3 @@
 ### Usage
  ```bash
  python3 Agent.py
-
-
-
-
