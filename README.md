@@ -1,5 +1,3 @@
-Here is an improved version of your README file:
-
 # Booking-Agent
 
 **Booking-Agent** is an AI-powered travel booking assistant designed to streamline the search for travel options and simplify the ticket booking process. The agent efficiently handles user requirements, offering a seamless booking experience.
