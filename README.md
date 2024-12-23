@@ -1,8 +1,8 @@
+Here is an improved version of your README file:
+
 # Booking-Agent
 
-**Booking-Agent** is an AI-powered travel booking assistant that simplifies searching for travel options and booking tickets. The agent is designed to handle user requirements efficiently, providing a seamless experience for travelers.
-
----
+**Booking-Agent** is an AI-powered travel booking assistant designed to streamline the search for travel options and simplify the ticket booking process. The agent efficiently handles user requirements, offering a seamless booking experience.
 
 ## Repository Overview
 
@@ -10,33 +10,53 @@
 - **utils**: Contains utility functions and modules used by the agent.
 - **README.md**: This documentation file.
 
----
-
 ## Features
 
-- Efficient search for flights based on customer requirements.
-- End-to-end air ticket booking functionality.
-- Scalable architecture, ready for future enhancements.
-
----
+- **Efficient Flight Search**: Quickly find flights based on customer requirements.
+- **Full Booking Functionality**: End-to-end air ticket booking.
+- **Scalable Architecture**: Designed for future enhancements and scalability.
 
 ## Getting Started
 
 ### Prerequisites
+
 - Python 3.8 or higher
 - Libraries listed in `requirements.txt`
 
 ### Installation
+
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/Booking-Agent.git
+   git clone https://github.com/Ruthuvikas/Booking-Agent.git
    cd Booking-Agent
+   ```
 
 2. Install dependencies:
    ```bash
-    pip install -r requirements.txt
-3. Set API key for OpenAI and SERPAPI_API
+   pip install -r requirements.txt
+   ```
+
+3. Set API keys for OpenAI and SERPAPI:
+   ```bash
+   export OPENAI_API_KEY='your_openai_api_key'
+   export SERPAPI_API_KEY='your_serpapi_api_key'
+   ```
 
 ### Usage
- ```bash
- python3 Agent.py
+
+Run the main script:
+```bash
+python3 Agent.py
+```
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For any inquiries or support, please contact [Ruthuvikas](https://github.com/Ruthuvikas).
