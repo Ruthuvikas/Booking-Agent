@@ -37,9 +37,4 @@ def flight_search(departure_id: str, arrival_id: str, outbound_date: str, return
         "outbound_date": outbound_date,
         "return_date": return_date
     }
-    # return {
-    #     "departure": "CDG",
-    #     "arrival": "AUS",
-    #     "outbound_date": "2024-12-24",
-    #     "return_date": "2024-12-30"
-    # }
+    
