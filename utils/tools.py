@@ -37,4 +37,37 @@ def flight_search(departure_id: str, arrival_id: str, outbound_date: str, return
         "outbound_date": outbound_date,
         "return_date": return_date
     }
+
+@tool
+def hotel_search(location: str, check_in_date: str, check_out_date: str) -> dict:
+    """Search for hotels with given parameters
     
+    Args:
+        location: Location or hotel name to search for (e.g., 'Bali Resorts')
+        check_in_date: Check-in date in YYYY-MM-DD format
+        check_out_date: Check-out date in YYYY-MM-DD format
+        
+    Returns:
+        dict: Hotel search results
+    """
+    params = {
+        "engine": "google_hotels",
+        "q": location,
+        "hl": "en",
+        "gl": "us",
+        "check_in_date": check_in_date,
+        "check_out_date": check_out_date,
+        "currency": "USD",
+        "api_key": os.getenv("SERPAPI_API_KEY")
+    }
+    
+    search = GoogleSearch(params)
+    results = search.get_dict()
+    
+    return {
+        "hotel_details": results,
+        "location": location,
+        "check_in_date": check_in_date,
+        "check_out_date": check_out_date
+    }
+

@@ -1,8 +1,8 @@
 from utils import state
 from langchain_openai import ChatOpenAI
-from utils.tools import flight_search
+from utils.tools import flight_search, hotel_search
 
-tools = [flight_search]
+tools = [flight_search, hotel_search]
 
 def chat(state):
     model = ChatOpenAI(temperature=0, model_name="gpt-4o")
