@@ -71,3 +71,35 @@ def hotel_search(location: str, check_in_date: str, check_out_date: str) -> dict
         "check_out_date": check_out_date
     }
 
+@tool
+def general_search(query: str, location: str = None) -> dict:
+    """Perform a general Google search with given parameters
+    
+    Args:
+        query: Search query string
+        location: Optional location to focus search results (e.g., 'Austin, Texas')
+        
+    Returns:
+        dict: Search results
+    """
+    params = {
+        "engine": "google",
+        "q": query,
+        "hl": "en",
+        "gl": "us",
+        "google_domain": "google.com",
+        "api_key": os.getenv("SERPAPI_API_KEY")
+    }
+    
+    if location:
+        params["location"] = location
+    
+    search = GoogleSearch(params)
+    results = search.get_dict()
+    
+    return {
+        "search_results": results,
+        "query": query,
+        "location": location
+    }
+
