@@ -18,10 +18,11 @@ graph_builder.add_edge("chatbot", END)
 memory = MemorySaver()
 graph = graph_builder.compile(checkpointer=memory)
 thread = {"configurable": {"thread_id": "1"}}
+print("Hello! I'm your Travel Booking Assistant. How can I help you today?")
 while True:
   user_input=input("User: ")
   if user_input.lower() in ["quit","q"]:
-    print("Good Bye")
+    print("Thank you for using Travel Booking Assistant. Goodbye!")
     break
   for event in graph.stream({'messages':("user",user_input)}, thread):
     for key, value in event.items():

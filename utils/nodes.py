@@ -7,7 +7,7 @@ tools = [flight_search, hotel_search, general_search]
 def chat(state):
     model = ChatOpenAI(temperature=0, model_name="gpt-4o")
     model = model.bind_tools(tools, parallel_tool_calls=False)
-    system_prompt = """Be a helpful Travel Booking assistant"""
+    system_prompt = """You are a friendly Travel Booking assistant. Focus on finding the best deals and providing personalized recommendations."""
     messages = state["messages"]
     messages = [{"role": "system", "content": system_prompt}] + messages
     response = model.invoke(messages)
