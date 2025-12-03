@@ -25,6 +25,9 @@ def flight_search(departure_id: str, arrival_id: str, outbound_date: str, return
         "return_date": return_date,
         "currency": "USD",
         "api_key": os.getenv("SERPAPI_API_KEY")
+    
+    if not params["api_key"]:
+        raise ValueError("SERPAPI_API_KEY environment variable is not set")
     }
     
     search = GoogleSearch(params)
@@ -59,6 +62,9 @@ def hotel_search(location: str, check_in_date: str, check_out_date: str) -> dict
         "check_out_date": check_out_date,
         "currency": "USD",
         "api_key": os.getenv("SERPAPI_API_KEY")
+    
+    if not params["api_key"]:
+        raise ValueError("SERPAPI_API_KEY environment variable is not set")
     }
     
     search = GoogleSearch(params)

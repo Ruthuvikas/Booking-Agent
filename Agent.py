@@ -24,7 +24,10 @@ while True:
   if user_input.lower() in ["quit","q"]:
     print("Good Bye")
     break
-  for event in graph.stream({'messages':("user",user_input)}, thread):
-    for key, value in event.items():
-      if key == "chatbot" and isinstance(value.get('messages'), list) and value['messages']:
-        print("Assistant:", value['messages'][0].content)
+  try:
+    for event in graph.stream({'messages':("user",user_input)}, thread):
+      for key, value in event.items():
+        if key == "chatbot" and isinstance(value.get('messages'), list) and value['messages']:
+          print("Assistant:", value['messages'][0].content)
+  except Exception as e:
+    print(f"Error: {e}")
