@@ -25,6 +25,7 @@ while True:
   if user_input.lower() in ["quit","q"]:
     print("Thank you for using Travel Booking Assistant. Goodbye!")
     break
+<<<<<<< HEAD
   for event in graph.stream({'messages':("user",user_input)}, thread):
     for key, value in event.items():
       if key == "chatbot" and isinstance(value.get('messages'), list) and value['messages']:
@@ -32,3 +33,12 @@ while True:
           print("Assistant:", value['messages'][0].content)
         except (KeyError, IndexError) as e:
           print(f"Failed to display message: {e}")
+=======
+  try:
+    for event in graph.stream({'messages':("user",user_input)}, thread):
+      for key, value in event.items():
+        if key == "chatbot" and isinstance(value.get('messages'), list) and value['messages']:
+          print("Assistant:", value['messages'][0].content)
+  except Exception as e:
+    print(f"Error: {e}")
+>>>>>>> main
