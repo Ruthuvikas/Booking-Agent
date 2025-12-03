@@ -27,6 +27,9 @@ def flight_search(departure_id: str, arrival_id: str, outbound_date: str, return
         "api_key": os.getenv("SERPAPI_API_KEY")
     }
     
+    if not params.get("api_key"):
+        return {"error": "API key is missing. Please set SERPAPI_API_KEY environment variable."}
+    
     search = GoogleSearch(params)
     results = search.get_dict()
     
@@ -60,6 +63,9 @@ def hotel_search(location: str, check_in_date: str, check_out_date: str) -> dict
         "currency": "USD",
         "api_key": os.getenv("SERPAPI_API_KEY")
     }
+    
+    if not params.get("api_key"):
+        return {"error": "API key is missing. Please set SERPAPI_API_KEY environment variable."}
     
     search = GoogleSearch(params)
     results = search.get_dict()

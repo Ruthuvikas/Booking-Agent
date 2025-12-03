@@ -28,4 +28,7 @@ while True:
   for event in graph.stream({'messages':("user",user_input)}, thread):
     for key, value in event.items():
       if key == "chatbot" and isinstance(value.get('messages'), list) and value['messages']:
-        print("Assistant:", value['messages'][0].content)
+        try:
+          print("Assistant:", value['messages'][0].content)
+        except (KeyError, IndexError) as e:
+          print(f"Failed to display message: {e}")
