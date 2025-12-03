@@ -18,6 +18,7 @@ graph_builder.add_edge("chatbot", END)
 memory = MemorySaver()
 graph = graph_builder.compile(checkpointer=memory)
 thread = {"configurable": {"thread_id": "1"}}
+print("Welcome to Travel Booking Assistant!")
 while True:
   user_input=input("User: ")
   if user_input.lower() in ["quit","q"]:
